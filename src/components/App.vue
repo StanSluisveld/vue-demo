@@ -9,3 +9,18 @@
     
 </template>
 
+<script>
+    import Header from './Header';
+    import Order from './Order';
+    import Inventory from './Inventory';
+
+    export default {
+        components: {
+            'Header': Header,
+            'Order': Order,
+            'Inventory': Inventory
+        
+        }
+    }
+
+</script>
