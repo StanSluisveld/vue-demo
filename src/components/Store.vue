@@ -13,6 +13,7 @@
     import Header from './Header';
     import Order from './Order';
     import Inventory from './Inventory';
+    import Mixin from '../mixins.js';
 
     export default {
         data() {
@@ -24,7 +25,12 @@
             'FirstHeader': Header,
             'Order': Order,
             'Inventory': Inventory   
-        }
+        },
+        mixins: [
+            Mixin
+        ]
     }
+
+
 
 </script>

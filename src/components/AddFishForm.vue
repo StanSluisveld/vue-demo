@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import Mixin from '../mixins.js';
+
       export default {  
 
        data() {
@@ -36,12 +38,14 @@
                     desc: this.$data.desc,
                     image: this.$data.image,
 		}
-                console.log(fish);
-
-            
-          
+        
+                console.log(fish); 
+                this.addFish(fish)       
       }
-    }
+    },
+    mixins: [
+        Mixin
+    ]
   }
 
 </script>

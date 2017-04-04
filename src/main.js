@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 const routes = [
     {path: '/', component: StorePicker},
     {path: '/store', component: Store}
-    
+
 ];
 
 const router = new VueRouter({
