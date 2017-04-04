@@ -1,10 +1,10 @@
 <template>
     <div class="catch-of-the-day">
         <div class="menu">
-            <Header></Header>
+            <FirstHeader :tagLine="tagLine" />
         </div>
-        <Order></Order>
-        <Inventory></Inventory>
+        <Order />
+        <Inventory />
     </div>
     
 </template>
@@ -15,11 +15,15 @@
     import Inventory from './Inventory';
 
     export default {
+        data() {
+            return {
+                tagLine: 'Fresh Sea Food'
+            }
+        },
         components: {
-            'Header': Header,
+            'FirstHeader': Header,
             'Order': Order,
-            'Inventory': Inventory
-        
+            'Inventory': Inventory   
         }
     }
 

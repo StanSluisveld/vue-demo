@@ -8,15 +8,16 @@
         </span>
         day
     </h1> 
-    <h3 class='tagline'><span>{{tagline}}</span></h3>
+    <h3 class='tagline'><span>{{tagLine}}</span></h3>
     </header>
 </template>
 
 <script>  
  export default {
+        props:['tagLine'],
         data() {
             return {
-               tagline: "Fresh Sea Food" 
+               
             }
         } 
     }
