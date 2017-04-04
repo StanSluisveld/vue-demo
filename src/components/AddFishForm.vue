@@ -1,19 +1,20 @@
 <template>
-    <form class='fish-edit' v-on:submit.prevent='createFish'> 
-        <input  type="text" placeholder="fish name " v-model="name" />
-            <input placeholder="fish price" v-model="price" />
-            <select v-model="status">
+    <form class='fish-edit' v-on:submit.prevent='createFish'>
+        <input type="text" placeholder="fish name " v-model="name" />
+        <input placeholder="fish price" v-model="price" />
+        <select v-model="status">
                 <option value="available" >Fresh</option>
                 <option value="unavailable">Sold Out!</option>
             </select>
-            <textarea  placeholder="fish desc" v-model="desc"></textarea>
-            <input type="text" placeholder="fish image" v-model="image" />
-            <button type="submit">+ Add item</button>
+        <textarea placeholder="fish desc" v-model="desc"></textarea>
+        <input type="text" placeholder="fish image" v-model="image" />
+        <!--<button type="submit" v-on:click="resetForm">+ Add item</button>-->
+        <button type="submit">+ Add item</button>
     </form>
 </template>
 
 <script>
-import Mixin from '../mixins.js';
+import { store } from '../mixins.js';
 
       export default {  
 
@@ -37,15 +38,19 @@ import Mixin from '../mixins.js';
                     status: this.$data.status,
                     desc: this.$data.desc,
                     image: this.$data.image,
-		}
-        
-                console.log(fish); 
-                this.addFish(fish)       
-      }
-    },
-    mixins: [
-        Mixin
-    ]
+		        }
+                store.addFish(fish);
+                console.log(store.state.fishes);   
+        },
+        resetForm: function(e) {
+            console.log('reset form');
+            this.$data.name = "",
+            this.$data.price = "",
+            this.$data.status = "",
+            this.$data.desc = "",
+            this.$data.image = ""
+        }
+    }
   }
 
 </script>
