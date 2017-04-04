@@ -1,6 +1,6 @@
 <template>
     <div class="catch-of-the-day">
-         <router-view></router-view>
+     
         <div class="menu">
             <FirstHeader :tagLine="tagLine" />
         </div>
