@@ -5,7 +5,7 @@
             <FirstHeader :tagLine="tagLine" />
         </div>
         <Order />
-        <Inventory />
+        <Inventory :loadSamples="loadSamples" />
     </div>  
 </template>
 
@@ -13,22 +13,19 @@
     import Header from './Header';
     import Order from './Order';
     import Inventory from './Inventory';
-    import Mixin from '../mixins.js';
 
     export default {
         data() {
             return {
-                tagLine: 'Fresh Sea Food'
+                tagLine: 'Fresh Sea Food',
+                loadSamples: this.mLoadSamples
             }
         },
         components: {
             'FirstHeader': Header,
             'Order': Order,
             'Inventory': Inventory   
-        },
-        mixins: [
-            Mixin
-        ]
+        }
     }
 
 
