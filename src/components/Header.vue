@@ -8,6 +8,16 @@
         </span>
         day
     </h1> 
-    <h3 class='tagline'><span></span></h3>
+    <h3 class='tagline'><span>{{tagline}}</span></h3>
     </header>
 </template>
+
+<script>  
+ export default {
+        data() {
+            return {
+               tagline: "Fresh Sea Food" 
+            }
+        } 
+    }
+</script>

@@ -9,6 +9,3 @@
     
 </template>
 
-<script>
-
-</script>
