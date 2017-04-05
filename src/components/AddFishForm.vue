@@ -17,17 +17,16 @@
 </template>
 
 <script>
-import { store } from '../mixins.js';
 
       export default {  
-  data() { 
+        props: ['fishes', 'addFish'],
+        data() { 
            return {
                 name: '',
                 price: '',
                 status: '',
                 desc: '',
-                image: '',
-                fishes: {}
+                image: ''
            }   
        },
 
@@ -40,9 +39,8 @@ import { store } from '../mixins.js';
                     desc: this.$data.desc,
                     image: this.$data.image,
 		        }
-                store.addFish(fish); 
-                this.$data.fishes = store.state.fishes
-                console.log(store.state.fishes);
+                this.addFish(fish); 
+             
                   
         },
         resetForm: function(e) {
