@@ -33,9 +33,11 @@ var store = {
         fishes: {},
         order: {}
     },
+
     addFish(fish) {
         const timestamp = Date.now();
         this.state.fishes[`fish-${timestamp}`] = fish;
+        console.log(this.state.fishes);
     },
 
     loadFishes() {
