@@ -1,4 +1,5 @@
 <template>
+    <div>
     <form class='fish-edit' v-on:submit.prevent='createFish'>
         <input type="text" placeholder="fish name " v-model="name" />
         <input placeholder="fish price" v-model="price" />
@@ -11,6 +12,8 @@
         <!--<button type="submit" v-on:click="resetForm">+ Add item</button>-->
         <button type="submit">+ Add item</button>
     </form>
+    {{fishes}}
+    </div>
 </template>
 
 <script>
@@ -23,7 +26,8 @@ import { store } from '../mixins.js';
                 price: '',
                 status: '',
                 desc: '',
-                image: ''
+                image: '',
+                fishes: {}
            }   
        },
 
@@ -36,9 +40,10 @@ import { store } from '../mixins.js';
                     desc: this.$data.desc,
                     image: this.$data.image,
 		        }
-                store.addFish(fish);
-                //console.log(fish);
-               // console.log(store.state.fishes); // kan ook fish zijn ipv store.state.fishes?   
+                store.addFish(fish); 
+                this.$data.fishes = store.state.fishes
+                console.log(store.state.fishes);
+                  
         },
         resetForm: function(e) {
             console.log('reset form');
