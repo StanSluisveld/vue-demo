@@ -3,7 +3,7 @@
         <div class="menu">
             <FirstHeader :tagLine="tagLine" />
             <ul class="list-of-fishes">
-                <Fish v-for="(value, key) in fishes" :key="key" />
+                <Fish v-for="(value, key) in fishes" :key="key" :fish="value" />
             </ul>
         </div>
         <Order />
@@ -22,16 +22,7 @@
         data() {
             return {
                 tagLine: 'Fresh Sea Food',
-                fishes: {
-                    "fish-1": {
-                        name: "jan",
-                        price: 5000
-                    },
-                    "fish-2": {
-                        name: "jan",
-                        price: 5000
-                    }
-                }
+                fishes: {}   
             }
         },
         methods: {

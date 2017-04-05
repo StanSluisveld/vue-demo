@@ -2,8 +2,7 @@
     <div>
         <h2>Inventory</h2>
         <AddFishForm :fishes="fishes" :addFish="addFish" />
-        <button v-on:click="loadSamples">Load sample fishes</button>
-       
+        <button v-on:click="loadSamples">Load sample fishes</button> 
     </div>
 </template>
 
