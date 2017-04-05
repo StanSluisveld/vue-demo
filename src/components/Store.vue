@@ -22,7 +22,8 @@
         data() {
             return {
                 tagLine: 'Fresh Sea Food',
-                fishes: {}   
+                fishes: {},
+                order: {}  
             }
         },
         methods: {
@@ -33,6 +34,9 @@
             },
             loadSamples() {
                 this.$data.fishes = sampleFishes;
+            },
+            addToOrder(key){
+		        this.$data.order[key] = order[key] + 1 || 1;
             }
         },
         components: {

@@ -6,17 +6,29 @@
             <span class="price>">{{formatPrice(fish.price)}}</span>
         </h3>
         <p>{{fish.desc}}</p>
-        <button>Add To Order</button>
+        <button v-bind:disabled='!isAvailable'>{{getButtonText()}}</button>
     </li>
 </template>
 
 <script>
 import { formatPrice } from '../helpers';
 
+
+
 export default {
+        data() {
+            return{
+               isAvailable: this.fish.status === 'available',
+            }
+        },
         props: ['fish'],
         methods: {
-            formatPrice: formatPrice
+            formatPrice: formatPrice,
+
+            getButtonText(){
+                return this.$data.isAvailable ? 'add to order' : 'sold out!'
+            }
         }
+       
 }
 </script>
