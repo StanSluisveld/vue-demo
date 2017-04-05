@@ -22,6 +22,6 @@ const router = new VueRouter({
 new Vue({
     el: '#main',
     router,
-    render: h => h(App)
+    render: h => h(Store)
 })
 

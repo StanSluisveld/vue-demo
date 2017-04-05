@@ -17,9 +17,7 @@
 import { store } from '../mixins.js';
 
       export default {  
-
-       data() {
-           console.log(name);
+  data() { 
            return {
                 name: '',
                 price: '',
@@ -31,7 +29,6 @@ import { store } from '../mixins.js';
 
        methods: {
             createFish: function (event) {
-                console.log("add some fish");
                 const fish = {
                     name: this.$data.name,
                     price: this.$data.price,
@@ -40,7 +37,8 @@ import { store } from '../mixins.js';
                     image: this.$data.image,
 		        }
                 store.addFish(fish);
-                console.log(store.state.fishes);   
+                //console.log(fish);
+               // console.log(store.state.fishes); // kan ook fish zijn ipv store.state.fishes?   
         },
         resetForm: function(e) {
             console.log('reset form');
