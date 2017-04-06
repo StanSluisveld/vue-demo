@@ -43,15 +43,15 @@
         methods: {
             addFish(fish) {
                 const timestamp = Date.now();
-                this.$data.fishes[`fish-${timestamp}`] = fish;
+                this.fishes[`fish-${timestamp}`] = fish;
                 console.log(this.$data.fishes)
             },
             loadSamples() {
-                this.$data.fishes = sampleFishes;
+                this.fishes = sampleFishes;
             },
             addToOrder(key) {
                 // const order = {...this.state.order} kan vervangen worden door this.$data.order
-		        this.$data.order[key] = this.$data.order[key] + 1 || 1;
+		        this.order[key] = this.order[key] + 1 || 1;
                // console.log(this.$data.order) 
      
             }
