@@ -12,7 +12,9 @@
                     />
             </ul>
         </div>
-        <Order />
+        <Order
+        :fishes="fishes"
+        :order="order" />
         <Inventory 
             :fishes="fishes" 
             :addFish="addFish" 
