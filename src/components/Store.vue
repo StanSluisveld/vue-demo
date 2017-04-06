@@ -3,11 +3,20 @@
         <div class="menu">
             <FirstHeader :tagLine="tagLine" />
             <ul class="list-of-fishes">
-                <Fish v-for="(value, key) in fishes" :key="key" :fish="value" />
+                <Fish 
+                    v-for="(value, key) in fishes" 
+                    :key="key" 
+                    :index="key"
+                    :fish="value" 
+                    :addToOrder="addToOrder"
+                    />
             </ul>
         </div>
         <Order />
-        <Inventory :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" />
+        <Inventory 
+            :fishes="fishes" 
+            :addFish="addFish" 
+            :loadSamples="loadSamples" />
     </div>  
 </template>
 
@@ -35,10 +44,13 @@
             loadSamples() {
                 this.$data.fishes = sampleFishes;
             },
-            addToOrder(key){
-		        this.$data.order[key] = order[key] + 1 || 1;
+            addToOrder(key) {
+                // const order = {...this.state.order} kan vervangen worden door this.$data.order
+		        this.$data.order[key] = this.$data.order[key] + 1 || 1;
+                console.log(this.$data.order)
+                
             }
-        },
+        }, 
         components: {
             'FirstHeader': Header,
             'Order': Order,
@@ -46,7 +58,4 @@
             'Fish': Fish 
         }
     }
-
-
-
 </script>
