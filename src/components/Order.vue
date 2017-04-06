@@ -1,15 +1,24 @@
 <template>
     <div class="order-wrap">
         <h2>Order</h2>   
-        {{orderIds}}
+        <p>{{orderIds}}</p>
     </div>
 </template>
 
 <script>
     
     export default {
-        props: ['fishes', 'order', 'orderIds']
-       
+        props: ['fishes', 'order'],
+        data(){
+            return{
+        
+            }
+        },
+        computed: {
+         orderIds: function () {
+         return this.order;
     }
-    
+  }
+       
+    }   
 </script>

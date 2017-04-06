@@ -15,7 +15,7 @@
         <Order
         :fishes="fishes"
         :order="order"
-        :orderIds="orderIds" />
+         />
         <Inventory 
             :fishes="fishes" 
             :addFish="addFish" 
@@ -37,7 +37,7 @@
                 tagLine: 'Fresh Sea Food',
                 fishes: {},
                 order: {},
-                orderIds: {}  
+                
             }
         },
         methods: {
@@ -52,9 +52,8 @@
             addToOrder(key) {
                 // const order = {...this.state.order} kan vervangen worden door this.$data.order
 		        this.$data.order[key] = this.$data.order[key] + 1 || 1;
-               // console.log(this.$data.order)
-               this.$data.orderIds = Object.keys(this.order)
-                
+               // console.log(this.$data.order) 
+     
             }
         }, 
         components: {
