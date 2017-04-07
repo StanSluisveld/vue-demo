@@ -36,7 +36,7 @@
           
             addFish(fish) {
                 const timestamp = Date.now();
-                this.fishes[`fish-${timestamp}`] = fish;
+                this.fishes[`fish${timestamp}`] = fish;
                 console.log(this.fishes)
             },
             loadSamples() {

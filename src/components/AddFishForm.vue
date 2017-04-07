@@ -8,7 +8,6 @@
             </select>
         <textarea placeholder="fish desc" v-model="desc"></textarea>
         <input type="text" placeholder="fish image" v-model="image" />
-        <!--<button type="submit" v-on:click="resetForm">+ Add item</button>-->
         <button type="submit">+ Add item</button>
     </form>
 </template>
@@ -36,18 +35,8 @@
                     desc: this.desc,
                     image: this.image,
 		        }
-                this.addFish(fish); 
-             
-                  
+                this.addFish(fish);      
         },
-        resetForm: function(e) {
-            console.log('reset form');
-            this.$data.name = "",
-            this.$data.price = "",
-            this.$data.status = "",
-            this.$data.desc = "",
-            this.$data.image = ""
-        }
     }
   }
 
