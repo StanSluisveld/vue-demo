@@ -30,11 +30,11 @@
        methods: {
             createFish: function (event) {
                 const fish = {
-                    name: this.$data.name,
-                    price: this.$data.price,
-                    status: this.$data.status,
-                    desc: this.$data.desc,
-                    image: this.$data.image,
+                    name: this.name,
+                    price: this.price,
+                    status: this.status,
+                    desc: this.desc,
+                    image: this.image,
 		        }
                 this.addFish(fish); 
              
