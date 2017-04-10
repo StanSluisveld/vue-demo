@@ -37,7 +37,7 @@
             addFish(fish) {
                 const timestamp = Date.now();
                 this.fishes[`fish${timestamp}`] = fish;
-                console.log(this.fishes)
+                //console.log(this.fishes)
             },
             loadSamples() {
                 this.fishes = sampleFishes;
@@ -46,6 +46,10 @@
 		        this.order[key] = this.order[key] + 1 || 1;
                 this.orderIds = Object.keys(this.order)
             },
+            // setFish(fish) {
+            //     console.log(fish)
+            //     this.fish = this.fishes;
+            // },
 
             renderOrder(key) {
 		const fish = this.fishes[key];
