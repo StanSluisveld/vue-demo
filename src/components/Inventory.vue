@@ -11,7 +11,7 @@
 				<textarea type="text" name="desc" :value='fish.desc' placeholder="" >
 				</textarea>
 				<input type="text" name="image" :value='fish.image' placeholder="" />
-				<button> </button>
+				<button v-on:click="removeFish"> remove </button>
 			</div>
         
         <AddFishForm :fishes="fishes" :addFish="addFish" />
@@ -23,7 +23,7 @@
     import AddFishForm from './AddFishForm';
 
     export default {
-        props: ['fishes', 'addFish', 'loadSamples'],
+        props: ['fishes', 'addFish', 'loadSamples', 'removeFish'],
         components: {
             'AddFishForm': AddFishForm 
         }

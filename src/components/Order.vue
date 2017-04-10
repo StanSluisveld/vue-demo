@@ -18,7 +18,7 @@
  import { formatPrice } from '../helpers';
     
     export default {
-        props: ['fishes', 'order', 'orderIds','total','renderOrder'],
+        props: ['fishes', 'order', 'orderIds','total','renderOrder', ],
         data(){
             return{
         

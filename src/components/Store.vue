@@ -7,7 +7,7 @@
             </ul>
         </div>
         <Order :fishes="fishes" :order="order" :orderIds="orderIds" :total="total" :renderOrder="renderOrder" />
-        <Inventory :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" />
+        <Inventory :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
     </div>
 </template>
 
@@ -30,8 +30,7 @@
             }
         },
        
-        methods: {
-            
+        methods: { 
             formatPrice: formatPrice,
           
             addFish(fish) {
@@ -50,6 +49,11 @@
             //     console.log(fish)
             //     this.fish = this.fishes;
             // },
+            removeFish(key){
+                const fishes = this.fishes;
+                fishes[key] = null;
+                console.log(fishes)
+            },
 
             renderOrder(key) {
 		const fish = this.fishes[key];
