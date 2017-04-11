@@ -12,7 +12,7 @@
             <textarea type="text" name="desc" :value='fish.desc' placeholder="" @keyup="handleChange(key, $event)">
 				</textarea>
             <input type="text" name="image" :value='fish.image' placeholder="" @keyup="handleChange(key, $event)" />
-            <button v-on:click="removeFish"> remove </button>
+            <button v-on:click="removeFish(key)"> remove </button>
         </div>
 
         <AddFishForm :fishes="fishes" :addFish="addFish" />

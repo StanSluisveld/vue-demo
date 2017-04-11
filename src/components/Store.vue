@@ -49,14 +49,13 @@
 
             removeFromOrder(key){
                 console.log(key, this.order)
-                delete this.order[key]; // Hier zet je het niet up NULL omdat anders alleen de waarde wordt veranderd
+                delete this.order[key]; 
                 this.orderIds = Object.keys(this.order);
                 },
           
             removeFish(key){
-                const fishes = this.fishes;
-                fishes[key] = null;
-                console.log(fishes)
+                console.log("before:", this.fishes)
+                Vue.delete(this.fishes, key)
             },
 
             renderOrder(key) {
