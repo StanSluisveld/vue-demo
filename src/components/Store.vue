@@ -2,13 +2,12 @@
     <div class="catch-of-the-day">
         <div class="menu">
             <FirstHeader :tagLine="tagLine" />
-            <h3>{{title}}</h3>
             <ul class="list-of-fishes">
                 <Fish v-for="(value, key) in fishes" :key="key" :index="key" :fish="value" :addToOrder="addToOrder" />
             </ul>
         </div>
         <Order :fishes="fishes" :order="order" :orderIds="orderIds" :total="total" :renderOrder="renderOrder" />
-        <Inventory @title_changed='setTitle' :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
+        <Inventory @handleChanged='updateFish' :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
     </div>
 </template>
 
@@ -27,8 +26,7 @@
                 tagLine: 'Fresh Sea Food',
                 fishes: {},
                 order: {},
-                orderIds: null,
-                title: ''    
+                orderIds: null,  
             }
         },
        
@@ -38,10 +36,11 @@
             addFish(fish) {
                 const timestamp = Date.now();
                 this.fishes[`fish${timestamp}`] = fish;
-                //console.log(this.fishes)
+                console.log("add fish fucntion:", this.fishes)
             },
             loadSamples() {
                 this.fishes = sampleFishes;
+                console.log("load sample function: ", this.fishes)
             },
             addToOrder(key) {
 		        this.order[key] = this.order[key] + 1 || 1;
@@ -63,8 +62,9 @@
         return count;
             },
             
-            setTitle(title) {
-    	        this.title = title;
+            updateFish(updatedFish) {
+                this.fishes[updatedFish.key][updatedFish.field] = updatedFish.value;
+    	        //console.log(updatedFish.key, updatedFish.field, updatedFish.value)
              },
             
             total(){

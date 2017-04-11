@@ -38,7 +38,7 @@
 		        }
                 this.addFish(fish);
                console.log(fish); 
-               // this.$emit('setFish', fish);     
+           
         },
     }
   }
