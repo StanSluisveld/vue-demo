@@ -2,12 +2,13 @@
     <div class="catch-of-the-day">
         <div class="menu">
             <FirstHeader :tagLine="tagLine" />
+            <h3>{{title}}</h3>
             <ul class="list-of-fishes">
                 <Fish v-for="(value, key) in fishes" :key="key" :index="key" :fish="value" :addToOrder="addToOrder" />
             </ul>
         </div>
         <Order :fishes="fishes" :order="order" :orderIds="orderIds" :total="total" :renderOrder="renderOrder" />
-        <Inventory :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
+        <Inventory @title_changed='setTitle' :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
     </div>
 </template>
 
@@ -26,7 +27,8 @@
                 tagLine: 'Fresh Sea Food',
                 fishes: {},
                 order: {},
-                orderIds: null,    
+                orderIds: null,
+                title: ''    
             }
         },
        
@@ -60,6 +62,10 @@
 		const count = this.order[key];
         return count;
             },
+            
+            setTitle(title) {
+    	        this.title = title;
+             },
             
             total(){
                 if(this.orderIds === null){
