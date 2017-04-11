@@ -6,7 +6,7 @@
                 <Fish v-for="(value, key) in fishes" :key="key" :index="key" :fish="value" :addToOrder="addToOrder" />
             </ul>
         </div>
-        <Order :fishes="fishes" :order="order" :orderIds="orderIds" :total="total" :renderOrder="renderOrder" />
+        <Order :fishes="fishes" :order="order" :orderIds="orderIds" :total="total" :renderOrder="renderOrder" :removeFromOrder="removeFromOrder" />
         <Inventory @handleChanged='updateFish' :fishes="fishes" :addFish="addFish" :loadSamples="loadSamples" :removeFish="removeFish" />
     </div>
 </template>
@@ -46,10 +46,13 @@
 		        this.order[key] = this.order[key] + 1 || 1;
                 this.orderIds = Object.keys(this.order)
             },
-            // setFish(fish) {
-            //     console.log(fish)
-            //     this.fish = this.fishes;
-            // },
+
+            removeFromOrder(key){
+                console.log(key, this.order)
+                delete this.order[key]; // Hier zet je het niet up NULL omdat anders alleen de waarde wordt veranderd
+                this.orderIds = Object.keys(this.order);
+                },
+          
             removeFish(key){
                 const fishes = this.fishes;
                 fishes[key] = null;

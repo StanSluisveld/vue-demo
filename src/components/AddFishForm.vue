@@ -1,6 +1,5 @@
 <template>
     <form class='fish-edit' v-on:submit.prevent='createFish' >  
-        <!--@setFish="setFish" https://jsfiddle.net/z11fe07p/1269/-->
         <input type="text" placeholder="fish name " v-model="name" />
         <input placeholder="fish price" v-model="price" />
         <select v-model="status">

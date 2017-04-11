@@ -4,7 +4,7 @@
         <ul class="order">
             <li v-for="orderId in orderIds">
               <span>{{renderOrder(orderId)}} Kilo {{fishes[orderId].name}}</span>
-              <span class="price">{{formatPrice(renderOrder(orderId) * fishes[orderId].price)}}<button>&times;</button></span>
+              <span class="price">{{formatPrice(renderOrder(orderId) * fishes[orderId].price)}}<button v-on:click='removeFromOrder(orderId)'>&times;</button></span>
             </li>
             <li class="total">
                 <strong>Total: </strong>
@@ -18,7 +18,7 @@
  import { formatPrice } from '../helpers';
     
     export default {
-        props: ['fishes', 'order', 'orderIds','total','renderOrder', ],
+        props: ['fishes', 'order', 'orderIds','total','renderOrder', 'removeFromOrder' ],
         data(){
             return{
         
