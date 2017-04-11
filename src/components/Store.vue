@@ -35,7 +35,7 @@
           
             addFish(fish) {
                 const timestamp = Date.now();
-                this.fishes[`fish${timestamp}`] = fish;
+                Vue.set(this.fishes, `fish${timestamp}`, fish);
                 console.log("add fish fucntion:", this.fishes)
             },
             loadSamples() {
