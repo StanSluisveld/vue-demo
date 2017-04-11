@@ -39,8 +39,12 @@
                 console.log("add fish fucntion:", this.fishes)
             },
             loadSamples() {
-                this.fishes = sampleFishes;
+                //this.fishes = sampleFishes;
                 console.log("load sample function: ", this.fishes)
+                // loop over object -> pak de key voor de vue.set
+                Object.keys(sampleFishes).forEach(fishKey => {
+                    Vue.set(this.fishes, fishKey, sampleFishes[fishKey])
+                });
             },
             addToOrder(key) {
 		        this.order[key] = this.order[key] + 1 || 1;
