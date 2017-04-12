@@ -2,10 +2,11 @@
     <div class="order-wrap">
         <h2>Order</h2>   
         <ul class="order">
-            <li v-for="orderId in orderIds">
+            <li v-for="orderId in orderIds" v-if="fishes[orderId]">        
               <span>{{renderOrder(orderId)}} Kilo {{fishes[orderId].name}}</span>
               <span class="price">{{formatPrice(renderOrder(orderId) * fishes[orderId].price)}}<button v-on:click='removeFromOrder(orderId)'>&times;</button></span>
             </li>
+            <li v-for="orderId in orderIds"  v-if="!fishes[orderId] && orderIds"><span>Sorry, this product is no longer available</span></li>
             <li class="total">
                 <strong>Total: </strong>
                 {{formatPrice(total())}}
@@ -27,6 +28,5 @@
          methods: {
             formatPrice: formatPrice,
          },
-
     }   
 </script>

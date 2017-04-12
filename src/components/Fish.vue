@@ -21,7 +21,7 @@ export default {
             formatPrice: formatPrice,
 
             getButtonText(){
-                return this.$data.isAvailable ? 'add to order' : 'sold out!'
+                return this.fish.status === "available" ? 'add to order' : 'sold out!'
             },
             isAvailable(){
                return this.fish.status === 'available'
