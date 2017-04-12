@@ -6,7 +6,7 @@
               <span>{{renderOrder(orderId)}} Kilo {{fishes[orderId].name}}</span>
               <span class="price">{{formatPrice(renderOrder(orderId) * fishes[orderId].price)}}<button v-on:click='removeFromOrder(orderId)'>&times;</button></span>
             </li>
-            <li v-for="orderId in orderIds"  v-if="(!fishes[orderId] && orderIds) || (fishes[orderId] && fishes[orderId].status == 'unavailable')"><span>Sorry, this product is no longer available</span></li>
+            <li v-for="orderId in orderIds"  v-if="(!fishes[orderId] && orderIds) || (fishes[orderId] && fishes[orderId].status == 'unavailable')"><span>Sorry, this product is no longer available<button v-on:click='removeFromOrder(orderId)'>&times;</button></span></li>
             <li class="total">
                 <strong>Total: </strong>
                 {{formatPrice(total())}}
