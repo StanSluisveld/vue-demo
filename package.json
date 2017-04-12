@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "performance:dev": "webpack --config build/build.js --profile --json > stats.json",
-    "performance:prod": "cross-env NODE_ENV=production webpack --config build/dev-server.js --profile --json > stats.prod.json"
+    "performance:dev": "webpack --config build/webpack.dev.conf.js --profile --json > stats.dev.json",
+    "performance:prod": "webpack --config build/webpack.prod.conf.js --profile --json > stats.prod.json"
 
   },
   "dependencies": {
