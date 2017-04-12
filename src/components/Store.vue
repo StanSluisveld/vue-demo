@@ -70,7 +70,7 @@
             
             updateFish(updatedFish) {
                 this.fishes[updatedFish.key][updatedFish.field] = updatedFish.value;
-    	        //console.log(updatedFish.key, updatedFish.field, updatedFish.value)
+    	        console.log("on change: ", updatedFish.key, updatedFish.field, updatedFish.value)
              },
             
             total(){

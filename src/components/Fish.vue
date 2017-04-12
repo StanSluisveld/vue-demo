@@ -6,7 +6,7 @@
             <span class="price>">{{formatPrice(fish.price)}}</span>
         </h3>
         <p>{{fish.desc}}</p>
-        <button v-on:click='() => addToOrder(index)' v-bind:disabled='!isAvailable'>{{getButtonText()}}</button>
+        <button v-on:click='() => addToOrder(index)' v-bind:disabled="!isAvailable()" >{{getButtonText()}}</button>
     </li>
 </template>
 
@@ -16,17 +16,15 @@ import { formatPrice } from '../helpers';
 
 
 export default {
-        data() {
-            return{
-               isAvailable: this.fish.status === 'available',
-            }
-        },
         props: ['fish', 'addToOrder', 'index'],
         methods: {
             formatPrice: formatPrice,
 
             getButtonText(){
                 return this.$data.isAvailable ? 'add to order' : 'sold out!'
+            },
+            isAvailable(){
+               return this.fish.status === 'available'
             }
         }
        

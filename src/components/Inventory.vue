@@ -31,6 +31,7 @@
         methods: {
   	        handleChange(key, e) {
                     this.$emit('handleChanged', {key: key, field: e.target.name, value: e.target.value});
+            
     }
   }
     }
